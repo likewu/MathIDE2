@@ -5,12 +5,14 @@ val ktlint by configurations.creating
 //}
 
 val library: Map<String, String> by project.extra
+//val testobject by project.extra
 
 dependencies {
     ktlint(library["ktlint"].toString())
     //ktlint("com.pinterest:ktlint:0.40.0")
     //println(ktlint)
     //println(library["ktlint"])
+    //println(testobject.bb)
 }
 
 val ktlintCheck by tasks.creating(JavaExec::class) {

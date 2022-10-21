@@ -9,6 +9,11 @@ val    versions by extra(mapOf(
     "publishVersionCode" to "7",
 ))
 
+var testobject by extra(object {
+    val aa = "aaaa"
+    val bb = 1111
+})
+
     // Plugins
 val    agp_version = "4.2.1"
 
@@ -60,12 +65,12 @@ val    mockito_version = "3.10.0"
     // Lint
 val    ktlint_version = "0.40.0"
 
-val    plugin = object {
-    val android_gradle_plugin = "com.android.tools.build:gradle:$agp_version"
-    val kotlin_gradle_plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    val hilt_gradle_plugin = "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
-    val safeargs_gradle_plugin = "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation_version"
-}
+val    plugin by extra(mapOf(
+    "android_gradle_plugin" to "com.android.tools.build:gradle:$agp_version",
+    "kotlin_gradle_plugin" to "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version",
+    "hilt_gradle_plugin" to "com.google.dagger:hilt-android-gradle-plugin:$hilt_version",
+    "safeargs_gradle_plugin" to "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation_version",
+))
 
 val    library by extra(mapOf(
     // Core
@@ -116,13 +121,13 @@ val    library by extra(mapOf(
     "chardet" to "com.ibm.icu:icu4j:$chardet_version",
 ))
 
-val    testLibrary = object {
-            val junit = "junit:junit:$junit_version"
-            val mockito = "org.mockito:mockito-core:$mockito_version"
-    }
+val    testLibrary by extra(mapOf(
+            "junit" to "junit:junit:$junit_version",
+            "mockito" to "org.mockito:mockito-core:$mockito_version",
+    ))
 
-val    androidTestLibrary = object {
-            val junit_ext = "androidx.test.ext:junit:$junit_ext_version"
-            val test_runner = "androidx.test:runner:$test_runner_version"
-            val espresso_core = "androidx.test.espresso:espresso-core:$espresso_core_version"
-    }
+val    androidTestLibrary by extra(mapOf(
+            "junit_ext" to "androidx.test.ext:junit:$junit_ext_version",
+            "test_runner" to "androidx.test:runner:$test_runner_version",
+            "espresso_core" to "androidx.test.espresso:espresso-core:$espresso_core_version",
+    ))
