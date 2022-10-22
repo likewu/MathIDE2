@@ -1,6 +1,6 @@
 rootProject.name = "MathIDE"
 
-//include("app")
+include("app")
 
 /*include ':app', ':domain', ':data', ':editorkit'
 

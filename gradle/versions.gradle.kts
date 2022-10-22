@@ -9,10 +9,10 @@ val    versions by extra(mapOf(
     "publishVersionCode" to "7",
 ))
 
-var testobject by extra(object {
+/*var testobject by extra(object {
     val aa = "aaaa"
     val bb = 1111
-})
+})*/
 
     // Plugins
 val    agp_version = "4.2.1"

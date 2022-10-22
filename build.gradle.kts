@@ -11,12 +11,13 @@ buildscript {
 plugins {
     val kotlinVersion = "1.7.20"
     base
+    //id("application")
     kotlin("jvm") version kotlinVersion apply false
-    /*plugin.android_gradle_plugin
-    plugin.kotlin_gradle_plugin
-    plugin.hilt_gradle_plugin
-    plugin.safeargs_gradle_plugin*/
+    //id("kotlin-kapt")
+    /*plugin.android_gradle_plugin*/
 }
+
+val library: Map<String, String> by project.extra
 
 //extra["swaggerVersion"] = "2.9.2"
 val aa by extra("ggg")
@@ -54,10 +55,14 @@ subprojects {
     }
 
     dependencies {
-        "api"(kotlin("stdlib-jdk8"))
-        "api"(kotlin("reflect"))
-        "api"("org.jetbrains.kotlin:kotlin-reflect")
-        "api"("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+        implementation(kotlin("stdlib-jdk8"))
+        implementation(kotlin("reflect"))
+        implementation("org.jetbrains.kotlin:kotlin-reflect")
+        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+
+        implementation(library["hilt_gradle_plugin"].toString())
+        //kapt(library["safeargs_gradle_plugin"].toString())
+
         "testImplementation"("org.springframework.boot:spring-boot-starter-test") {
             exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
         }
