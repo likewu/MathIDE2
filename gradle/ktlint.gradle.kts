@@ -4,8 +4,8 @@ val ktlint by configurations.creating
 //    ktlint
 //}
 
-val library: Map<String, String> by project.extra
 //val testobject by project.extra
+val library: Map<String, String> by project.extra
 
 dependencies {
     ktlint(library["ktlint"].toString())

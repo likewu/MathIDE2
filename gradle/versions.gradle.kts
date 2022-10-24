@@ -15,7 +15,7 @@ val    versions by extra(mapOf(
 })*/
 
     // Plugins
-val    agp_version = "4.2.1"
+val    agp_version = "7.0.4"
 
     // Core
 val    kotlin_version = "1.7.20"
@@ -47,7 +47,7 @@ val    gson_version = "2.8.6"
 val    coroutines_version = "1.5.0"
 
     // DI
-val    hilt_version = "2.35.1"
+val    hilt_version = "2.44"
 
     // Other
 val    keyboardevent_version = "3.0.0-RC3"
