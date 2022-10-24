@@ -77,8 +77,6 @@ subprojects {
         //implementation(library["hilt_gradle_plugin"].toString())
         //implementation("com.google.dagger:hilt-android-gradle-plugin:2.44")
 
-        implementation("com.android.tools.build:gradle:7.0.4")
-
         "testImplementation"("org.springframework.boot:spring-boot-starter-test") {
             exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
         }

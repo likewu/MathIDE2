@@ -3,8 +3,7 @@ plugins {
     id("kotlin-android")
     id("kotlin-kapt")
     id("kotlin-parcelize")
-    kotlin("kapt")
-    id("dagger.hilt.android.plugin")
+    //id("dagger.hilt.android.plugin")
 }
 
 val versions: Map<String, String> by project.extra
@@ -124,8 +123,14 @@ dependencies {
     implementation(library["coroutines_core"].toString())
     implementation(library["coroutines_android"].toString())
 
+    implementation("androidx.hilt:hilt-common:1.0.0")
+    kapt("androidx.hilt:hilt-compiler:1.0.0")
+    implementation("androidx.hilt:hilt-navigation-fragment:1.0.0")
+    implementation("androidx.hilt:hilt-work:1.0.0")
     // DI
+    //implementation("com.google.dagger:hilt-android-compiler:2.44")
     implementation(library["hilt"].toString())
+    //kapt("com.google.dagger:hilt-android-compiler:2.44")
     kapt(library["hilt_compiler"].toString())
     //implementation("com.google.dagger:hilt-android:2.44")
     //kapt("com.google.dagger:hilt-compiler:2.44")
@@ -133,7 +138,7 @@ dependencies {
     //ksp(project(":test-processor"))
 
     // Modules
-    implementation(project(":domain"))
+    /*implementation(project(":domain"))
     implementation(project(":data"))
 
     implementation(project(":filesystems:filesystem-base"))
@@ -145,7 +150,7 @@ dependencies {
     implementation(project(":features:feature-settings"))
     implementation(project(":features:feature-themes"))
     implementation(project(":features:feature-ui"))
-    implementation(project(":features:feature-utils"))
+    implementation(project(":features:feature-utils"))*/
 
     // Tests
     testImplementation(testLibrary["junit"].toString())
