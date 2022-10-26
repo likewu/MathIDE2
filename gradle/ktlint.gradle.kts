@@ -8,7 +8,7 @@ val ktlint by configurations.creating
 val library: Map<String, String> by project.extra
 
 dependencies {
-    ktlint(library["ktlint"].toString())
+    //ktlint(library["ktlint"].toString())
     //ktlint("com.pinterest:ktlint:0.40.0")
     //println(ktlint)
     //println(library["ktlint"])
