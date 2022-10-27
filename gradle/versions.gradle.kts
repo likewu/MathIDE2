@@ -1,7 +1,7 @@
 val    versions by extra(mapOf(
     "minSdk" to "21",
     "targetSdk" to "30",
-    "compileSdk" to "33",
+    "compileSdk" to "30",
     "buildTools" to "30.0.3",
 
     // Library

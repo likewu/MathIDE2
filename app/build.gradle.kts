@@ -13,7 +13,7 @@ val androidTestLibrary: Map<String, String> by rootProject.extra
 val kotlin_version = "1.7.20"//: String by rootProject.extra
 
 android {
-    compileSdkVersion(33/*versions["compileSdk"].toString()*/)
+    compileSdkVersion(30/*versions["compileSdk"].toString()*/)
     buildToolsVersion = versions["buildTools"].toString()
 
     defaultConfig {
