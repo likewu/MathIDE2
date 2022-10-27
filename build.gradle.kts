@@ -42,7 +42,7 @@ allprojects {
 }
 
 subprojects {
-    val library: Map<String, String> by project.extra
+    val library: Map<String, String> by rootProject.extra
 
     apply {
         plugin("org.jetbrains.kotlin.android")
@@ -65,23 +65,6 @@ subprojects {
         kotlinOptions {
             jvmTarget = "17"
             freeCompilerArgs = listOf("-Xjsr305=strict")
-        }
-    }
-
-    //val implementation by configurations
-
-    dependencies {
-        val library: Map<String, String> by project.extra
-
-        implementation("org.jetbrains.kotlin:kotlin-reflect")
-        implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-
-        implementation("com.google.dagger:hilt-android:2.44")
-        annotationProcessor("com.google.dagger:hilt-compiler:2.44")
-        //implementation(library["hilt_gradle_plugin"].toString())
-
-        "testImplementation"("org.springframework.boot:spring-boot-starter-test") {
-            exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
         }
     }
 }

@@ -6,14 +6,14 @@ plugins {
     //id("dagger.hilt.android.plugin")
 }
 
-val versions: Map<String, String> by project.extra
-val library: Map<String, String> by project.extra
-val testLibrary: Map<String, String> by project.extra
-val androidTestLibrary: Map<String, String> by project.extra
-val kotlin_version: String by project.extra
+val versions: Map<String, String> by rootProject.extra
+val library: Map<String, String> by rootProject.extra
+val testLibrary: Map<String, String> by rootProject.extra
+val androidTestLibrary: Map<String, String> by rootProject.extra
+val kotlin_version = "1.7.20"//: String by rootProject.extra
 
 android {
-    compileSdkVersion = versions["compileSdk"].toString()
+    compileSdkVersion(33/*versions["compileSdk"].toString()*/)
     buildToolsVersion = versions["buildTools"].toString()
 
     defaultConfig {
@@ -74,18 +74,18 @@ android {
         jvmTarget = "17"
     }
     sourceSets {
-        create("main") {
+        /*named("main") {
             java.srcDirs(listOf("src/main/kotlin"))
-        }
+        }*/
         //baidu.java.srcDirs += "src/baidu/kotlin"
         //fdroid.java.srcDirs += "src/fdroid/kotlin"
         //googlePlay.java.srcDirs += "src/googlePlay/kotlin"
-        create("test") {
+        /*named("test") {
             java.srcDirs("src/test/kotlin")
         }
-        create("androidTest") {
+        named("androidTest") {
             java.srcDirs("src/androidTest/kotlin")
-        }
+        }*/
         //Tell Gradle where to put the compiled shared library
         //main.jniLibs.srcDir "libs"
         //disable automatic ndk-build call
@@ -129,13 +129,17 @@ dependencies {
     implementation("androidx.hilt:hilt-work:1.0.0")
     // DI
     //implementation("com.google.dagger:hilt-android-compiler:2.44")
-    implementation(library["hilt"].toString())
+    //implementation(library["hilt"].toString())
     //kapt("com.google.dagger:hilt-android-compiler:2.44")
-    kapt(library["hilt_compiler"].toString())
+    //kapt(library["hilt_compiler"].toString())
     //implementation("com.google.dagger:hilt-android:2.44")
     //kapt("com.google.dagger:hilt-compiler:2.44")
     //implementation(project(":test-processor"))
     //ksp(project(":test-processor"))
+
+    implementation("com.google.dagger:hilt-android:2.44")
+    annotationProcessor("com.google.dagger:hilt-compiler:2.44")
+    //implementation(library["hilt_gradle_plugin"].toString())
 
     // Modules
     /*implementation(project(":domain"))
@@ -159,5 +163,6 @@ dependencies {
     androidTestImplementation(androidTestLibrary["test_runner"].toString())
     androidTestImplementation(androidTestLibrary["espresso_core"].toString())
     implementation("androidx.core:core-ktx:+")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:$kotlin_version")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version")
 }

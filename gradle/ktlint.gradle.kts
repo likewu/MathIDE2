@@ -5,7 +5,7 @@
 //}
 
 //val testobject by project.extra
-val library: Map<String, String> by project.extra
+val library: Map<String, String> by rootProject.extra
 
 dependencies {
     //ktlint(library["ktlint"].toString())
