@@ -1,4 +1,4 @@
-val ktlint by configurations.creating
+//val ktlint by configurations.creating
 
 //configurations {
 //    ktlint
@@ -15,7 +15,7 @@ dependencies {
     //println(testobject.bb)
 }
 
-val ktlintCheck by tasks.creating(JavaExec::class) {
+/*val ktlintCheck by tasks.creating(JavaExec::class) {
     description = "Check Kotlin code style."
     classpath = ktlint
     mainClass.set("com.pinterest.ktlint.Main")
@@ -27,6 +27,6 @@ val ktlintFormat by tasks.creating(JavaExec::class) {
     classpath = ktlint
     mainClass.set("com.pinterest.ktlint.Main")
     args = listOf("-F", "src/**/*.kt")
-}
+}*/
 
 // tasks.getByPath(':app:preBuild').dependsOn ktlintFormat

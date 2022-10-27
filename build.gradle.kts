@@ -14,7 +14,7 @@ buildscript {
 plugins {
     val kotlinVersion = "1.7.20"  //"1.6.21"
 
-    id("com.android.application") version "7.3.1"
+    id("com.android.application") version "7.1.1"
     id("org.jetbrains.kotlin.android") version kotlinVersion
     id("org.jlleitschuh.gradle.ktlint") version "11.0.0"
     id("com.github.ben-manes.versions") version "0.43.0"
@@ -28,13 +28,14 @@ allprojects {
     version = "1.1.0"
 
     repositories {
-        //google()
-        //mavenCentral()
-        //gradlePluginPortal()
         maven(url="https://maven.aliyun.com/repository/google")
-        maven(url="https://maven.aliyun.com/repository/public")
+        maven(url="https://maven.aliyun.com/repository/public")  //jcenter
         maven(url="https://maven.aliyun.com/repository/central")
-        //maven(url="https://maven.aliyun.com/repository/gradle-plugin")
+        maven(url="https://maven.aliyun.com/repository/gradle-plugin")
+    }
+
+    apply {
+        plugin("org.jlleitschuh.gradle.ktlint")
     }
 
     apply(from = "${rootProject.projectDir}/gradle/ktlint.gradle.kts")
@@ -67,13 +68,11 @@ subprojects {
         }
     }
 
-    val implementation by configurations
+    //val implementation by configurations
 
     dependencies {
         val library: Map<String, String> by project.extra
 
-        implementation(kotlin("stdlib-jdk8"))
-        implementation(kotlin("reflect"))
         implementation("org.jetbrains.kotlin:kotlin-reflect")
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
