@@ -36,7 +36,7 @@
         tools:replace="android:supportsRtl">
 
         <activity
-            android:name="cn.leafcolor.mathide.MainActivity"
+            android:name=".ui.application.activities.MainActivity"
             android:windowSoftInputMode="adjustResize"
             android:configChanges="keyboard|keyboardHidden"
             android:launchMode="singleTask">
@@ -59,7 +59,7 @@
 
         <activity
             android:name="cn.leafcolor.mathide.ui.feature.settings.activities.SettingsActivity"
-            android:parentActivityName="cn.leafcolor.mathide.MainActivity"
+            android:parentActivityName=".ui.application.activities.MainActivity"
             android:configChanges="keyboard|keyboardHidden"
             android:label="@string/label_settings">
             <intent-filter>

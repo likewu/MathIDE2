@@ -39,7 +39,7 @@
 
 The `editorkit` module provides code editor without any support for programming languages.
 
-[ ![MavenCentral](https://img.shields.io/maven-central/v/com.blacksquircle.ui/editorkit?label=Download) ](https://repo1.maven.org/maven2/com/blacksquircle/ui/editorkit/)
+[ ![MavenCentral](https://img.shields.io/maven-central/v/cn.leafcolor.mathide.ui/editorkit?label=Download) ](https://repo1.maven.org/maven2/com/blacksquircle/ui/editorkit/)
 
 ## Gradle Dependency
 
@@ -48,7 +48,7 @@ Add this to your module's `build.gradle` file:
 ```gradle
 dependencies {
   ...
-  implementation 'com.blacksquircle.ui:editorkit:2.0.0'
+  implementation 'cn.leafcolor.mathide.ui:editorkit:2.0.0'
 }
 ```
 
@@ -62,7 +62,7 @@ You can see list of available languages [here](#languages-1).
 **First,** you need to add `TextProcessor` in your layout:
 
 ```xml
-<com.blacksquircle.ui.editorkit.widget.TextProcessor
+<cn.leafcolor.mathide.ui.editorkit.widget.TextProcessor
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="top|start"
@@ -88,7 +88,7 @@ Also you might want to use `setTextContent(PrecomputedTextCompat)` if you're wor
 **Finally**, after you set the text you need to clear undo/redo history because you don't want to keep the change history of other files.
 
 ```kotlin
-import com.blacksquircle.ui.editorkit.utils.UndoStack
+import cn.leafcolor.mathide.ui.editorkit.utils.UndoStack
 
 editor.undoStack = UndoStack()
 editor.redoStack = UndoStack()
@@ -131,7 +131,7 @@ editor.editorConfig = EditorConfig(
 To attach the text scroller you need to add `TextScroller` in your layout:
 
 ```xml
-<com.blacksquircle.ui.editorkit.widget.TextScroller
+<cn.leafcolor.mathide.ui.editorkit.widget.TextScroller
     android:layout_width="30dp"
     android:layout_height="match_parent"
     android:id="@+id/scroller"
@@ -250,7 +250,7 @@ editor.moveCaretToNextWord()
 ...or use «Go to Line» feature to place the caret at the specific line:
 
 ```kotlin
-import com.blacksquircle.ui.editorkit.exception.LineException
+import cn.leafcolor.mathide.ui.editorkit.exception.LineException
 
 try {
     editor.gotoLine(lineNumber)
@@ -276,7 +276,7 @@ The class itself contains self-explanatory methods for all your searching needs:
 - `clearFindResultSpans()` - Clears all find spans on the screen. Call this method when you're done searching.
 
 ```kotlin
-import com.blacksquircle.ui.editorkit.model.FindParams
+import cn.leafcolor.mathide.ui.editorkit.model.FindParams
 
 val findParams = FindParams(
     regex = false, // whether the regex will be used
@@ -373,7 +373,7 @@ editor.colorScheme = ColorScheme(
 The language modules provides support for programming languages. This includes syntax highlighting, code suggestions and source code parser.
 *(Note that source code parser currently works only in `language-javascript` module, but it will be implemented for more languages soon)*
 
-[ ![MavenCentral](https://img.shields.io/maven-central/v/com.blacksquircle.ui/language-base?label=Download) ](https://repo1.maven.org/maven2/com/blacksquircle/ui/language-base/)
+[ ![MavenCentral](https://img.shields.io/maven-central/v/cn.leafcolor.mathide.ui/language-base?label=Download) ](https://repo1.maven.org/maven2/com/blacksquircle/ui/language-base/)
 
 ## Gradle Dependency
 
@@ -382,28 +382,28 @@ Select your language and add it's dependency to your module's `build.gradle` fil
 ```gradle
 dependencies {
   ...
-  implementation 'com.blacksquircle.ui:language-actionscript:2.0.0'
-  implementation 'com.blacksquircle.ui:language-base:2.0.0' // for custom language
-  implementation 'com.blacksquircle.ui:language-c:2.0.0'
-  implementation 'com.blacksquircle.ui:language-cpp:2.0.0'
-  implementation 'com.blacksquircle.ui:language-csharp:2.0.0'
-  implementation 'com.blacksquircle.ui:language-groovy:2.0.0'
-  implementation 'com.blacksquircle.ui:language-html:2.0.0'
-  implementation 'com.blacksquircle.ui:language-java:2.0.0'
-  implementation 'com.blacksquircle.ui:language-javascript:2.0.0'
-  implementation 'com.blacksquircle.ui:language-json:2.0.0'
-  implementation 'com.blacksquircle.ui:language-kotlin:2.0.0'
-  implementation 'com.blacksquircle.ui:language-lisp:2.0.0'
-  implementation 'com.blacksquircle.ui:language-lua:2.0.0'
-  implementation 'com.blacksquircle.ui:language-markdown:2.0.0'
-  implementation 'com.blacksquircle.ui:language-php:2.0.0'
-  implementation 'com.blacksquircle.ui:language-plaintext:2.0.0'
-  implementation 'com.blacksquircle.ui:language-python:2.0.0'
-  implementation 'com.blacksquircle.ui:language-shell:2.0.0'
-  implementation 'com.blacksquircle.ui:language-sql:2.0.0'
-  implementation 'com.blacksquircle.ui:language-typescript:2.0.0'
-  implementation 'com.blacksquircle.ui:language-visualbasic:2.0.0'
-  implementation 'com.blacksquircle.ui:language-xml:2.0.0'
+  implementation 'cn.leafcolor.mathide.ui:language-actionscript:2.0.0'
+  implementation 'cn.leafcolor.mathide.ui:language-base:2.0.0' // for custom language
+  implementation 'cn.leafcolor.mathide.ui:language-c:2.0.0'
+  implementation 'cn.leafcolor.mathide.ui:language-cpp:2.0.0'
+  implementation 'cn.leafcolor.mathide.ui:language-csharp:2.0.0'
+  implementation 'cn.leafcolor.mathide.ui:language-groovy:2.0.0'
+  implementation 'cn.leafcolor.mathide.ui:language-html:2.0.0'
+  implementation 'cn.leafcolor.mathide.ui:language-java:2.0.0'
+  implementation 'cn.leafcolor.mathide.ui:language-javascript:2.0.0'
+  implementation 'cn.leafcolor.mathide.ui:language-json:2.0.0'
+  implementation 'cn.leafcolor.mathide.ui:language-kotlin:2.0.0'
+  implementation 'cn.leafcolor.mathide.ui:language-lisp:2.0.0'
+  implementation 'cn.leafcolor.mathide.ui:language-lua:2.0.0'
+  implementation 'cn.leafcolor.mathide.ui:language-markdown:2.0.0'
+  implementation 'cn.leafcolor.mathide.ui:language-php:2.0.0'
+  implementation 'cn.leafcolor.mathide.ui:language-plaintext:2.0.0'
+  implementation 'cn.leafcolor.mathide.ui:language-python:2.0.0'
+  implementation 'cn.leafcolor.mathide.ui:language-shell:2.0.0'
+  implementation 'cn.leafcolor.mathide.ui:language-sql:2.0.0'
+  implementation 'cn.leafcolor.mathide.ui:language-typescript:2.0.0'
+  implementation 'cn.leafcolor.mathide.ui:language-visualbasic:2.0.0'
+  implementation 'cn.leafcolor.mathide.ui:language-xml:2.0.0'
 }
 ```
 
@@ -416,17 +416,17 @@ dependencies {
 ```gradle
 dependencies {
   ...
-  implementation 'com.blacksquircle.ui:language-base:2.0.0'
+  implementation 'cn.leafcolor.mathide.ui:language-base:2.0.0'
 }
 ```
 
 **Second,** implement the `Language` interface:
 
 ```kotlin
-import com.blacksquircle.ui.language.base.Language
-import com.blacksquircle.ui.language.base.parser.LanguageParser
-import com.blacksquircle.ui.language.base.provider.SuggestionProvider
-import com.blacksquircle.ui.language.base.styler.LanguageStyler
+import cn.leafcolor.mathide.ui.language.base.Language
+import cn.leafcolor.mathide.ui.language.base.parser.LanguageParser
+import cn.leafcolor.mathide.ui.language.base.provider.SuggestionProvider
+import cn.leafcolor.mathide.ui.language.base.styler.LanguageStyler
 
 class CustomLanguage : Language {
 
