@@ -15,7 +15,7 @@ val    versions by extra(mapOf(
 })*/
 
     // Plugins
-val    agp_version = "7.0.4"
+val    agp_version = "7.1.1"
 
     // Core
 val    kotlin_version = "1.7.20"
@@ -27,10 +27,10 @@ val    fragment_version = "1.3.3"
 val    playcore_version = "1.8.1"
 
     // UI
-val    appcompat_version = "1.3.0-rc01"
+val    appcompat_version = "1.3.0"
 val    materialdesign_version = "1.3.0"
 val    constraintlayout_version = "2.0.4"
-val    swiperefreshlayout_version = "1.2.0-alpha01"
+val    swiperefreshlayout_version = "1.2.0"
 val    preferencescompat_version = "1.1.1"
 val    materialdialogs_version = "3.3.0"
 val    recyclerview_selection_version = "1.1.0"
@@ -50,7 +50,7 @@ val    coroutines_version = "1.5.0"
 val    hilt_version = "2.44"
 
     // Other
-val    keyboardevent_version = "3.0.0-RC3"
+val    keyboardevent_version = "3.0.0"
 val    rhino_version = "1.7.13"
 val    zip4j_version = "2.7.0"
 val    chardet_version = "69.1"

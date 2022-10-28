@@ -13,7 +13,7 @@ val androidTestLibrary: Map<String, String> by rootProject.extra
 val kotlin_version = "1.7.20"//: String by rootProject.extra
 
 android {
-    compileSdkVersion(30/*versions["compileSdk"].toString()*/)
+    compileSdkVersion(30) //"android-"+versions["compileSdk"].toString()
     buildToolsVersion = versions["buildTools"].toString()
 
     defaultConfig {
@@ -124,7 +124,7 @@ dependencies {
     implementation(library["coroutines_android"].toString())
 
     implementation("androidx.hilt:hilt-common:1.0.0")
-    kapt("androidx.hilt:hilt-compiler:1.0.0")
+    kapt("androidx.hilt:hilt-compiler:2.44")
     implementation("androidx.hilt:hilt-navigation-fragment:1.0.0")
     implementation("androidx.hilt:hilt-work:1.0.0")
     // DI

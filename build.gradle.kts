@@ -5,19 +5,25 @@ import java.text.SimpleDateFormat
 import java.util.concurrent.TimeUnit
 import java.util.Date
 
-buildscript {
-    val kotlinVersion = "1.7.20"  //"1.6.21"
+val kotlin_version: String by rootProject.extra
+val agp_version: String by rootProject.extra
 
+buildscript {
     apply(from = "${rootProject.projectDir}/gradle/versions.gradle.kts")
 }
 
 plugins {
     val kotlinVersion = "1.7.20"  //"1.6.21"
+    val agp_version = "7.1.1"
 
-    id("com.android.application") version "7.1.1"
+    id("com.android.application") version agp_version
     id("org.jetbrains.kotlin.android") version kotlinVersion
     id("org.jlleitschuh.gradle.ktlint") version "11.0.0"
     id("com.github.ben-manes.versions") version "0.43.0"
+}
+
+android {
+    compileSdkVersion(30)
 }
 
 //extra["swaggerVersion"] = "2.9.2"
